@@ -25,18 +25,24 @@
         <div class="list">
           <div class="list-boxes">
             <ul>
-              <li>
+              <li v-for="(list, index) in list-boxes ">
+                {{ list }}
                 <h3>Cercare nuovi studenti</h3>
-                <i class="fa-regular fa-rectangle-xmark"></i>
+                <span v-if="item.unDone" class="uncheck"
+                  ><i class="fa-regular fa-rectangle-xmark"></i
+                ></span>
+                <span v-else="item.Done" class="check">
+                  <i class="fa-regular fa-square-check"></i
+                ></span>
               </li>
-              <li>
+              <!-- <li>
                 <h3>Istruire i nuovi studenti</h3>
                 <i class="fa-regular fa-rectangle-xmark"></i>
               </li>
               <li>
                 <h3>Aiutare i studenti a cercare lavoro</h3>
                 <i class="fa-regular fa-rectangle-xmark"></i>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
