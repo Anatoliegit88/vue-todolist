@@ -31,7 +31,10 @@
                 <span v-if="item.unDone" class="uncheck"
                   ><i class="fa-regular fa-rectangle-xmark"></i
                 ></span>
-                <span v-else="item.Done" class="check">
+                <span
+                  v-else="item.Done"
+                  class="check"
+                  @click="clickedItem(index)">
                   <i class="fa-regular fa-square-check"></i
                 ></span>
               </li>

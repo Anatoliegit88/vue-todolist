@@ -28,9 +28,9 @@ createApp ({
   },
   methods: {
     changedList() {
-      if (this.list = true);
+      if (this.item.unDone = true);
     }
-    else this.
+    else this.item.Done = false,
   }
 
 
