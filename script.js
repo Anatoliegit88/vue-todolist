@@ -16,23 +16,46 @@
 
 const { createApp } = Vue;
 
-createApp ({
+createApp({
   data() {
     return {
+      isError: false,
+      newList: "",
       list: [
-        "Cercare nuovi studenti",
-        "Istruire i nuovi studenti",
-        "Aiutare i studenti a cercare lavoro",
+        {
+          text: "Cercare nuovi studenti",
+          done: false,
+        },
+        {
+          text: "Istruire i nuovi studenti",
+          done: false,
+        },
+        {
+          text: "Aiutare i studenti a cercare lavoro",
+          done: false,
+        },
       ],
     };
   },
   methods: {
-    changedList() {
-      if (this.item.unDone = true);
-    }
-    else this.item.Done = false,
-  }
-
-
-
+    clickedItem(listIndex) {
+      this.list.splice(listIndex, 1);
+    },
+    addNewList() {
+      if (this.newList.length > 5) {
+        const newItem = {
+          text: this.newList,
+          done: false,
+        };
+        this.list.push(newItem);
+        this.newList = "";
+        this.isError = false;
+      } else {
+        this.isError = true;
+      }
+    },
+    changedList(listIndex) {
+      this.list[listIndex].done = !this.list[listIndex].done;
+    },
+  },
 }).mount("#app");

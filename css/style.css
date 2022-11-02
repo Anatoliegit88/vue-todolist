@@ -50,3 +50,12 @@ li {
 .fa-regular {
   padding-top: 0.3rem;
 }
+.input {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100px;
+  text-align: center;
+  align-items: center;
+  padding-left: 11rem;
+}
+<i class="fa-regular fa-rectangle-xmark"></i>
